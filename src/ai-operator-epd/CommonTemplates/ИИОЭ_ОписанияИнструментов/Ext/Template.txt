@@ -1,0 +1,10 @@
+Описания инструментов пакета ЭТрН для модели (формат ИИО_ОписанияИнструментов). Раздел instructions дописывается к инструкциям ядра.
+
+## instructions
+Электронные транспортные накладные (ЭТрН): «почему ЭТрН не дошла», «где застряла перевозка», «что с накладной по реализации» — epd_status. Повторная отправка титула оператору ЭДО — perform с action epd_send и refs из actions ответа epd_status.
+
+## epd_status
+Состояние ЭТрН по реализации (или другому документу-основанию) либо по самой ЭТрН: какие титулы подписаны (T1 — грузоотправитель, то есть мы; T2 — перевозчик принял груз; T3 — грузополучатель принял груз; T4 — перевозчик выдал груз), на каком титуле стоит перевозка и что сделать.
+Ответ: etrn — накладные документа (новые первыми): titles (title, by: us, carrier, consignee; status: none, formed, signed, ready, sent, received; date), edo_state — состояние документооборота в 1С, diagnosis. Без ЭТрН — diagnosis.code NO_ETRN.
+diagnosis: code (T1_NOT_FORMED, T1_NOT_SIGNED, T1_NOT_SENT, T1_ERROR, T1_REJECTED, T3_REJECTED, WAIT_T2, WAIT_T3, WAIT_T4, DONE, DELETED, OTHER), whose_turn (us, carrier, consignee), counterparty — чьего действия ждем, days и since — сколько без движения, reason — текст ошибки оператора или причина отказа, action (epd_send, open, wait, none), text — готовое объяснение.
+Пересказывай text и reason, не придумывай других причин. action epd_send — предложи повторную отправку: она есть в actions, выполняется через perform. open — сделать может только пользователь в форме ЭТрН. wait — ход контрагента: напоминаний контрагенту 1С не отправляет, предложи связаться с ним.
