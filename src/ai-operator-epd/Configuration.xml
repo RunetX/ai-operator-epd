@@ -47,7 +47,7 @@
 			<ConfigurationExtensionCompatibilityMode>Version8_3_20</ConfigurationExtensionCompatibilityMode>
 			<ScriptVariant>Russian</ScriptVariant>
 			<Vendor>RunetX</Vendor>
-			<Version>0.1.0.1</Version>
+			<Version>0.1.1.0</Version>
 			<BriefInformation>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -83,6 +83,7 @@
 			<Language>Русский</Language>
 			<Subsystem>ИИОЭ_ИИО_Пакеты</Subsystem>
 			<Constant>ИИОЭ_АдресТестовогоСервераОператораЭДО</Constant>
+			<CommonModule>ИИОЭ_СостояниеПакета</CommonModule>
 			<CommonModule>ИИОЭ_ПакетКлиент</CommonModule>
 			<CommonModule>ИИОЭ_ИнструментыКлиентСервер</CommonModule>
 			<CommonModule>ИИОЭ_ИнструментыБота</CommonModule>
