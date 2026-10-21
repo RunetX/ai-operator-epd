@@ -58,6 +58,7 @@
 			<Language>Русский</Language>
 			<CommonModule>ОМ_ИИОЭ_ДиагностикаСервер</CommonModule>
 			<CommonModule>ОМ_ИИОЭ_ГенераторЭТрН</CommonModule>
+			<CommonModule>ОМ_ИИОЭ_НаполнениеСтенда</CommonModule>
 			<CommonModule>ОМ_ИИОЭ_СтатусЭПДСервер</CommonModule>
 		</ChildObjects>
 	</Configuration>
